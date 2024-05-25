@@ -1,0 +1,16 @@
+1. graphql deals with the problem of overfetching or underfetching data in case of rest API 
+
+2. Whenever we send a graphql request to server it is typically done by single endpoint which would look like mysite.com/graphql 
+
+3. graphql allows us to fetch nested related data
+
+4. query ReviewQuery{
+    reviews{
+        rating,
+        content,
+        id
+    }
+}
+  We will only get rating, content, id of reviews 
+
+5. npm pkg set type="module"
