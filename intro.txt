@@ -14,3 +14,9 @@
   We will only get rating, content, id of reviews 
 
 5. npm pkg set type="module"
+
+6. adding exclamation mark in schema makes it required field
+
+7. type query is used to define entry points to the graph and every schema should have it 
+
+8. resolvers handle any incoming requests and return the appropriate data

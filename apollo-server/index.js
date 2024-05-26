@@ -1,10 +1,28 @@
 import { ApolloServer } from "@apollo/server";
 import {startStandaloneServer} from "@apollo/server/standalone";
+import {typeDefs} from "./schema.js";
+
+import db from "./db.js";
+
+const resolvers={
+    Query:{
+        games(){
+            return db.games
+        },
+        reviews(){
+            return db.reviews
+        },
+        authors(){
+            return db.authors
+        }
+    }
+}
+
 
 // server setup
 const server=new ApolloServer({
-    // typeDefs,
-    // resolvers,
+    typeDefs,
+    resolvers,
 
 })
 
@@ -14,3 +32,6 @@ const {url}=await startStandaloneServer(server,{
 })
 
 console.log(`Server ready at, `,4000)
+
+
+//resolvers handle any incoming requests and return the appropriate data
